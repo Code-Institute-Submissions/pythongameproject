@@ -10,3 +10,13 @@ while True:
         print("You win!")
         print("It took you " + str(guess) + " guesses.")
         break
+    
+    elif answer == "hint":
+        print("You are a...")
+
+    elif answer.upper() == "I GIVE UP":
+        print("The answer was human!")
+        break
+
+    else:
+        print("Sorry, keep trying")
