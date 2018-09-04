@@ -6,7 +6,7 @@ while True:
     answer = input()
     guess += 1
 
-    if answer == human
+    if answer == human:
         print("You win!")
         print("It took you " + str(guess) + " guesses.")
         break
