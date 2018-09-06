@@ -12,7 +12,7 @@ while True:
     answer = input()
     guess += 1
 
-    if answer == "human":
+    if "human" in answer:
         print("You win!")
         print("It took you " + str(guess) + " guesses.")
         sys.exit()
