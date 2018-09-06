@@ -1,3 +1,7 @@
+# from byotest import *
+
+# print("All tests pass")
+
 print("Welcome to the Riddle game!")
 
 guess = 0
@@ -11,6 +15,7 @@ while True:
     if answer == "human":
         print("You win!")
         print("It took you " + str(guess) + " guesses.")
+        sys.exit()
     
     elif answer == "hint":
         print("You are a...")
