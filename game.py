@@ -1,22 +1,22 @@
+print("Welcome to the Riddle game!")
+
 guess = 0
 
 while True:
+    print("Enter your guess below! For a hint type 'hint', or, if you give up, type: 'I give up'")
     print("Which is the animal that walks with four legs in the morning, two in the afternoon and three at night")
-    print("Enter your guess! For a hint type 'hint', or 'I give up', below")
     answer = input()
     guess += 1
 
-    if answer == human:
+    if answer == "human":
         print("You win!")
         print("It took you " + str(guess) + " guesses.")
-        break
     
     elif answer == "hint":
         print("You are a...")
 
     elif answer.upper() == "I GIVE UP":
         print("The answer was human!")
-        break
 
     else:
         print("Sorry, keep trying")
