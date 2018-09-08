@@ -9,6 +9,19 @@ def show_menu():
     option = input("Enter option number: ")
     return option
 
+def add_question():
+    print(" ")
+    question = input("Enter your Riddle \n> ")
+
+    print(" ")
+    print("Thank you! What is the answer? \n> ")
+    answer = input("{0}\n> ".format(question))
+    
+    file = open("riddles.txt","a")
+    file.write(question + "\n")
+    file.write(answer + "\n")
+    file.close()
+
 
 #print("Welcome to the Riddle game!")
 #guess = 0
@@ -19,7 +32,7 @@ def game_loop():
         if option == "1":
             print("You have selected 'Play the Riddle Game!'")
         elif option == "2":
-            print("You have selected 'Add your Riddle'")
+            add_question()
         elif option == "3":
             break
         else:
