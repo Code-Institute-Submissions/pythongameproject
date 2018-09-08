@@ -78,4 +78,4 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from the [File Input/Output module of Course Institute] (https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+BD101+2017_T1/courseware/22fb100b5f5846e3b4f2db18683b08bb/f4521923f14f4f98b3ec161db66773e6/?child=first)
