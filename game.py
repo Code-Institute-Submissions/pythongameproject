@@ -8,6 +8,41 @@ def show_menu():
     
     option = input("Enter option number: ")
     return option
+    
+def ask_riddles():
+    riddles = []
+    answers = []
+    
+    with open("riddles.txt", "r") as file:
+        lines = file.read().splitlines()
+    
+    for i, text in enumerate(lines):
+        if i%2 == 0:
+            riddles.append(text)
+        else:
+            answers.append(text)
+    
+    number_of_riddles = len(riddles)
+    riddles_and_answers = zip(riddles, answers)
+    
+    score = 0
+            
+    for riddle, answer in riddles_and_answers:
+        guess = input(riddle + "> ")
+        if answer in guess:
+            score += 1
+            print("That's right! Well done!")
+            print(score)
+        else:
+            if (sum([i[0] != ' '  for i in difflib.ndiff(guess, answer)]) / 2) <= 2:
+                print(sum([i[0] != ' '  for i in difflib.ndiff(guess, answer)]))
+                print("Spelling needs checking, but we'll accept it!")
+                score += 1
+                print(score)
+            else:
+                print("Sorry, mate, that's not right...")
+    
+    print("You got {0} correct out of {1}. Thank you for playing!".format(score, number_of_riddles))
 
 def add_riddle():
     print(" ")
@@ -30,13 +65,15 @@ def game_loop():
     while True:
         option = show_menu()
         if option == "1":
-            print("You have selected 'Play the Riddle Game!'")
+            ask_riddles()
         elif option == "2":
             add_riddle()
         elif option == "3":
             break
         else:
-            print("Invalid Option :( ")
+            print("Invalid option")
+        print("")
+        
 game_loop()
        
 #        print("Enter your guess below! For a hint type 'hint', or, if you give up, type: 'I give up'")
