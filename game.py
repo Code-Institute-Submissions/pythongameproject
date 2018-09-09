@@ -1,6 +1,22 @@
 # from byotest import *
 
 # print("All tests pass")
+
+import os
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello():
+    return "<h1>Game Environment<h1>"
+
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
+            debug=True)
+
 def show_menu():
     print("1. Play the Riddle Game!")
     print("2. Add your Riddle")
@@ -33,14 +49,9 @@ def ask_riddles():
             score += 1
             print("That's right! Well done!")
             print(score)
+
         else:
-            if (sum([i[0] != ' '  for i in difflib.ndiff(guess, answer)]) / 2) <= 2:
-                print(sum([i[0] != ' '  for i in difflib.ndiff(guess, answer)]))
-                print("Spelling needs checking, but we'll accept it!")
-                score += 1
-                print(score)
-            else:
-                print("Sorry, mate, that's not right...")
+            print("Sorry, mate, that's not right...")
     
     print("You got {0} correct out of {1}. Thank you for playing!".format(score, number_of_riddles))
 
