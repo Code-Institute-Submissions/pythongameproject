@@ -9,16 +9,16 @@ def show_menu():
     option = input("Enter option number: ")
     return option
 
-def add_question():
+def add_riddle():
     print(" ")
-    question = input("Enter your Riddle \n> ")
+    riddle = input("Enter your Riddle \n> ")
 
     print(" ")
     print("Thank you! What is the answer? \n> ")
-    answer = input("{0}\n> ".format(question))
+    answer = input("{0}\n> ".format(riddle))
     
     file = open("riddles.txt","a")
-    file.write(question + "\n")
+    file.write(riddle + "\n")
     file.write(answer + "\n")
     file.close()
 
@@ -32,7 +32,7 @@ def game_loop():
         if option == "1":
             print("You have selected 'Play the Riddle Game!'")
         elif option == "2":
-            add_question()
+            add_riddle()
         elif option == "3":
             break
         else:
@@ -40,7 +40,7 @@ def game_loop():
 game_loop()
        
 #        print("Enter your guess below! For a hint type 'hint', or, if you give up, type: 'I give up'")
-#        print("Your first question is: \n 'What creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening'")
+#        print("Your first riddle is: \n 'What creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening'")
 #        answer = input()
 #        guess += 1
 #
