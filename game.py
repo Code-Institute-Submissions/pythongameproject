@@ -1,121 +1,37 @@
-# from byotest import *
-
-# print("All tests pass")
-
 import os
 from flask import Flask, render_template
+from Riddle import Riddle
+# import 'RiddleRepository.py'
 
-app = Flask(__name__)
-
+app = Flask('riddle me this')
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('home.html')
 
+@app.route('/riddle/<int:riddle_id>')
+def showRiddle(riddle_id):
+    riddle = Riddle(riddle_id)
+    return render_template('ask_riddle.html', question=riddle.question)
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
+@app.route('/riddle/<int:riddle_id>', methods=['POST'])
+def answerRiddle(riddle_id):
+    riddle = Riddle(riddle_id)
 
+# decide if answer is correct
+# render button going to the next riddle (if there are any)
+    return 'Answering riddle #' + str(riddle_id)
 
-@app.route('/contact')
-def contact():
-    return render_template("contact.html")
+@app.route('/riddle/new')
+def showNewRiddle():
+# display a form with riddle and answer fields
+# action="/riddle/new" method="post"
+    return 'Give us your best riddle!'
 
+@app.route('/riddle/new', methods=['POST'])
+def saveNewRiddle():
+# save new riddle in storage
+    return 'Thanks! We will review your riddle!'
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
-            debug=True)
-
-def show_menu():
-    print("1. Play the Riddle Game!")
-    print("2. Add your Riddle")
-    print("3. Quit")
-    
-    option = input("Enter option number: ")
-    return option
-    
-def ask_riddles():
-    riddles = []
-    answers = []
-    
-    with open("riddles.txt", "r") as file:
-        lines = file.read().splitlines()
-    
-    for i, text in enumerate(lines):
-        if i%2 == 0:
-            riddles.append(text)
-        else:
-            answers.append(text)
-    
-    number_of_riddles = len(riddles)
-    riddles_and_answers = zip(riddles, answers)
-    
-    score = 0
-            
-    for riddle, answer in riddles_and_answers:
-        guess = input(riddle + "> ")
-        if answer in guess:
-            score += 1
-            print("That's right! Well done!")
-            print(score)
-
-        else:
-            print("Sorry, mate, that's not right...")
-    
-    print("You got {0} correct out of {1}. Thank you for playing!".format(score, number_of_riddles))
-
-def add_riddle():
-    print(" ")
-    riddle = input("Enter your Riddle \n> ")
-
-    print(" ")
-    print("Thank you! What is the answer? \n> ")
-    answer = input("{0}\n> ".format(riddle))
-    
-    file = open("riddles.txt","a")
-    file.write(riddle + "\n")
-    file.write(answer + "\n")
-    file.close()
-
-
-#print("Welcome to the Riddle game!")
-#guess = 0
-
-def game_loop():   
-    while True:
-        option = show_menu()
-        if option == "1":
-            ask_riddles()
-        elif option == "2":
-            add_riddle()
-        elif option == "3":
-            break
-        else:
-            print("Invalid option")
-        print("")
-        
-game_loop()
-       
-#        print("Enter your guess below! For a hint type 'hint', or, if you give up, type: 'I give up'")
-#        print("Your first riddle is: \n 'What creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening'")
-#        answer = input()
-#        guess += 1
-#
-#        if "human" in answer:
-#            print("You win!")
-#            print("It took you " + str(guess) + " guesses.")
-#            sys.exit()
-    
-#        elif answer == "hint":
-#            print("You are a...")
-
-#        elif answer.upper() == "I GIVE UP":
-#            print("The answer was 'human'!")
-
-#        else:
-#            print("Sorry, keep trying")
-        
-        
-# There are 2 sisters: one gives birth to the other and she, in turn, gives birth to the first. Who are the two sisters? Day and Night
+    app.run(host='0.0.0.0', port=80, debug=True);
