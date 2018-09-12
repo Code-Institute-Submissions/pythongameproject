@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<h1>Answer the question below, give it your best shot!</h1>
 {{ question }}
+<form action="/riddle/{{ riddle_id }}" method="POST">
+    <input type="text" name="answer"/>
+    <button type="submit" class="btn btn-secondary my-2 my-sm-0">Secondary</button>
+
+</form>
 
 {% endblock %}
