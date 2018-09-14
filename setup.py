@@ -3,6 +3,19 @@ import sqlite3
 db = sqlite3.connect('database.sqlite')
 
 cursor = db.cursor()
+
+cursor.execute('''
+    DROP TABLE riddles;
+''')
+
+cursor.execute('''
+    DROP TABLE users;
+''')
+
+cursor.execute('''
+    DROP TABLE scores;
+''')
+
 cursor.execute('''
     CREATE TABLE riddles (
         question TEXT,
@@ -32,5 +45,13 @@ cursor.execute('''
         ('Who is the person', 'Lawrence'),
         ('Which is the show', 'hounds');
 ''')
+
+cursor.execute('''
+    INSERT INTO users (handle, password)
+    VALUES
+        ('micaela','signorelli'), 
+        ('testuser', 'testpass');
+''')
+
 db.commit()
 db.close()
