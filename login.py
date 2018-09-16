@@ -1,5 +1,6 @@
 import sqlite3
 import time
+import sys
 
 def login():
     while True:
@@ -25,4 +26,31 @@ def login():
                 #return("exit")
                 break
 
-login()
+def newUser():
+    found = 0
+    while found == 0:
+        user_handle = input("Please enter a username: ")
+        with sqlite3.connect("database.sqlite") as db:
+            cursor = db.cursor()
+        findUser = ("SELECT * FROM users WHERE handle = ?")
+        cursor.execute(findUser, [(user_handle)])
+        
+        if cursor.fetchall():
+            print("Username taken, please try again")
+        else:
+            found = 1
+            
+    password = input("Please enter your password: ")
+    password1 = input("Please reenter your password: ")
+    while password !=password1:
+        print ("Your passwords didn't match, try again")
+        password = input("Please enter your password: ")
+        password1 = input("Please reenter your password: ")
+    insertData = '''INSERT INTO users(handle,password) 
+    VALUES(?,?)'''
+    cursor.execute(insertData,[(user_handle),(password)])
+    db.commit()
+
+newUser()
+#login()
+
