@@ -51,6 +51,32 @@ def newUser():
     cursor.execute(insertData,[(user_handle),(password)])
     db.commit()
 
-newUser()
+#newUser()
 #login()
 
+def menu():
+    while True:
+        print("Welcome to the Riddle Game")
+        menu =('''
+        1 - Create new user
+        2 - Login 
+        3 - Exit\n''')
+        
+        userChoice = input(menu)
+        
+        if userChoice == "1":
+            newUser()
+        
+        elif userChoice == "2":
+            login()
+            
+        elif userChoice == "3":
+            print("Goodbye")
+            sys.exit()
+            
+        else:
+            print("Invalid option")
+            
+menu()
+        
+        
