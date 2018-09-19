@@ -1,4 +1,22 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Riddle Game Extravaganza</h1>
+<div class="container">
+<div class="row"> 
+<div class="col-xs-3 col-offset-5">
 
+<h1>Riddle Game Extravaganza</h1>
+<ul>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('showRiddle', riddle_id=1) }}">Play Riddle Game</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('showNewRiddle') }}">Submit your riddle</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('leaderboard') }}">Leaderboard</a>
+    </li>
+</ul>
+
+    </div>
+    </div>
+    </div>
 {% endblock %}
