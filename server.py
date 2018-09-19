@@ -1,14 +1,52 @@
 import sqlite3
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, session
 from Riddle import Riddle
+from Score import Score
 # import 'RiddleRepository.py'
 
 app = Flask('riddle me this')
+app.secret_key = 'radnisjf'
 
 @app.route('/')
 def index():
     return render_template('home.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+    
+@app.route('/login', methods=['POST'])
+def processlogin():
+    username = request.form['username']
+    password = request.form['password']
+    
+# check if the username already exists
+    with sqlite3.connect("database.sqlite") as db:
+            cursor = db.cursor()
+    find_user = ("SELECT handle, password, rowid FROM users WHERE handle = ? AND password = ?")
+    cursor.execute(find_user,(username, password))
+    result = cursor.fetchone()
+
+# if the username exists check the password given is correct for the user name, if it is, login, if not redirect to login form saying username and password are incorrect
+    
+    if result:
+        if result[1]==password:
+            session['logged_in_user_id'] = result[2]
+            session['logged_in_username'] = result[0]
+            return redirect(url_for('index'))
+
+    return redirect(url_for('login'))
+    
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
+# if the username and password are correct, log user in
+# if the username does not exist, create a new user using the username and password and then log them in
+
+
 
 # @app.route('/riddle/')
 
@@ -25,6 +63,7 @@ def answerRiddle(riddle_id):
 # render button going to the next riddle (if there are any)
 
     riddle_correct = riddle.checkAnswer(request.form['answer'])
+    Score.record(session['logged_in_user_id'],riddle.id,riddle_correct)
     return render_template('answer_riddle.html', correct = riddle_correct)
 
 @app.route('/riddle/new')
@@ -41,7 +80,12 @@ def saveNewRiddle():
     riddle= Riddle.store(question, answer)
     return 'Thanks! We will review your riddle! <a href="/riddle/'+ str(riddle.id) + '"> Find it here </a>'
 
+@app.route('/leaderboard')
+def leaderboard():
+    return render_template('leaderboard.html', scores = Score.get_scores_leaderboard())
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
+            
