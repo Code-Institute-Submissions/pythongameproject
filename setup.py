@@ -33,7 +33,7 @@ cursor.execute('''
 cursor.execute('''
     CREATE TABLE scores (
         riddle_id INTEGER,
-        user_handle TEXT,
+        user_id INTEGER,
         correct INTEGER
     );
 ''')
@@ -51,6 +51,13 @@ cursor.execute('''
     VALUES
         ('micaela','signorelli'), 
         ('testuser', 'testpass');
+''')
+
+cursor.execute('''
+    INSERT INTO scores (user_id, riddle_id, correct) 
+    VALUES
+        (1, 1, 1), 
+        (1, 2, 0);
 ''')
 
 db.commit()
