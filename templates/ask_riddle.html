@@ -1,12 +1,23 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1>Answer the question below, give it your best shot!</h1>
-{{ question }}
-<form action="/riddle/{{ riddle_id }}" method="POST">
-    <input type="text" name="answer"/>
-    <button type="submit" class="btn btn-secondary my-2 my-sm-0">Secondary</button>
-
-</form>
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-auto">
+            <h1>Answer the question below, give it your best shot!</h1>
+        </div>
+    </div>
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-auto">
+            <h3 class="text-primary"> {{ question }} </h3>
+        </div>
+    </div>
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-auto">
+            <form action="/riddle/{{ riddle_id }}" method="POST">
+                <input type="text" name="answer" />
+                <button type="submit" class="btn btn-secondary my-2 my-sm-0">Submit Answer</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
