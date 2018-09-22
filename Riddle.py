@@ -7,14 +7,15 @@ class Riddle:
     answer = ''
     question = ''
 
-    def __init__(self, riddle_id):
-        db = sqlite3.connect('database.sqlite')
-        cursor = db.cursor()
-        cursor.execute('''SELECT rowid, question, answer FROM riddles WHERE rowid = ?''', (str(riddle_id)))
-        riddle = cursor.fetchone()
-        self.id = riddle[0]
-        self.answer = riddle[2]
-        self.question = riddle[1]
+    def __init__(self, riddle_id=False):
+        if riddle_id:
+            db = sqlite3.connect('database.sqlite')
+            cursor = db.cursor()
+            cursor.execute('''SELECT rowid, question, answer FROM riddles WHERE rowid = ?''', (str(riddle_id)))
+            riddle = cursor.fetchone()
+            self.id = riddle[0]
+            self.answer = riddle[2]
+            self.question = riddle[1]
         
         '''
         with open('riddles') as file:
