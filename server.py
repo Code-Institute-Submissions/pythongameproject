@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, session
 from Riddle import Riddle
 from Score import Score
+from User import User
 # import 'RiddleRepository.py'
 
 app = Flask('riddle me this')
@@ -23,18 +24,11 @@ def processlogin():
     password = request.form['password']
     
 # check if the username already exists
-    with sqlite3.connect("database.sqlite") as db:
-            cursor = db.cursor()
-    find_user = ("SELECT handle, password, rowid FROM users WHERE handle = ? AND password = ?")
-    cursor.execute(find_user,(username, password))
-    result = cursor.fetchone()
-
-# if the username exists check the password given is correct for the user name, if it is, login, if not redirect to login form saying username and password are incorrect
-    
-    if result:
-        if result[1]==password:
-            session['logged_in_user_id'] = result[2]
-            session['logged_in_username'] = result[0]
+    user = User.fromusername(username)
+    if user:
+        if user.checkPassword(password):
+            session['logged_in_user_id'] = user.id
+            session['logged_in_username'] = user.username
             return redirect(url_for('index'))
 
     return redirect(url_for('login'))
