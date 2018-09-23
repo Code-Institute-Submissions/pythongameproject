@@ -64,7 +64,8 @@ def answerRiddle(riddle_id):
 
     riddle_correct = riddle.checkAnswer(request.form['answer'])
     Score.record(session['logged_in_user_id'],riddle.id,riddle_correct)
-    return render_template('answer_riddle.html', correct = riddle_correct)
+    
+    return render_template('answer_riddle.html', correct=riddle_correct, riddle_id=riddle_id)
 
 @app.route('/riddle/new')
 def showNewRiddle():
