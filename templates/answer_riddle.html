@@ -9,7 +9,7 @@
     </div>
     <div class="row justify-content-md-center mt-5">
         <div class="col-md-auto">
-            <button type="button" class="btn btn-primary" href="#">Next Riddle</button>
+            <a class="btn btn-primary" href="{{ url_for('showRiddle', riddle_id=(riddle_id+1)) }}">Next Riddle</a>
         </div>
     </div>
 </div>
