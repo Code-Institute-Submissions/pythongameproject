@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
     <div class="row justify-content-md-center mt-5">
-        <div class="col-md-auto">
+        <div class="col-md-auto mt-5 mb-5">
             <div class="alert alert-{{ 'success' if correct else 'info' }}">
                 <h1>Your answer was {{ 'correct' if correct else 'incorrect' }}</h1>
             </div>
         </div>
     </div>
     <div class="row justify-content-md-center mt-5">
-        <div class="col-md-auto">
-            <a class="btn btn-primary" href="{{ url_for('showRiddle', riddle_id=(riddle_id+1)) }}">Next Riddle</a>
+        <div class="col-md-auto mt-2 mb-5">
+            <a class="btn btn-primary" href="{{ url_for('showRiddle', riddle_id=(riddle_id+1)) }}">Next Riddle <i class="fas fa-chevron-circle-right ml-2"></i></a>
         </div>
     </div>
 </div>

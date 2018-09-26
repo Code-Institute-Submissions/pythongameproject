@@ -1,20 +1,20 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
+{% extends 'base.html' %} {% block content %}
+<div class="container">
 <div class="row justify-content-md-center mt-5">
     <div class="col-md-auto">
         <h2>Login using your username and password <small class="text-muted">or register a new user</small></h2>
     </div>
 </div>
-
-<div class="row justify-content-md-center mt-5 mb-5">
-    <div class="col-md-auto">
-        <form action="/login" method="POST">
-            <input type="text" name="username" placeholder="username"/>
-            <input type="password" name="password" placeholder="password"/>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center mt-5 mb-5">
+        <div class="col-md-auto">
+            <form action="/login" method="POST">
+                <input type="text" name="username" placeholder="username" />
+                <input type="password" name="password" placeholder="password" />
                 <button type="submit" class="btn btn-secondary my-2 my-sm-0">Login</button>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 
