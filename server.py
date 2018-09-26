@@ -30,6 +30,12 @@ def processlogin():
             session['logged_in_user_id'] = user.id
             session['logged_in_username'] = user.username
             return redirect(url_for('index'))
+    else:
+        user = User.newUser(username, password)
+        if user:    
+            session['logged_in_user_id'] = user.id
+            session['logged_in_username'] = user.username
+            return redirect(url_for('index'))
 
     return redirect(url_for('login'))
     
