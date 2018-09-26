@@ -1,49 +1,58 @@
-# TO DO
-- add more riddles
-- * solid, single responsibility, 
+# Riddle Game Project
 
+This is the third Milestone Project, the Practical Python Unit, for Code Institute's Full Stack Web Developer Course.
+The objective of this project is to design and execute a Riddle-Me-This game, applying the backend coding language Python.
 
-# Your Project's Name
-
-One or two paragraphs providing an overview of your project.
-
-Essentially, this part is your sales pitch.
- 
 ## UX
- 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+This website is designed for an informal gamer who can, through a friendly and clear interphase, 
+Create a user, answer Riddles, Submit their own Riddles to the game and see the top scores in the Leaderboard. 
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+User Stories were used for Behavior-Driven Development, such as:
+- As a user, I am answering a Riddle, a Riddle question is asked. 
+- The Riddle has a correct answer, the correct answer is given, the given answer is then correct.
+
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+- User Creation: A player is allowed and promted to get a user before playing the game, with the objective of recording their scores.
+- Login, which allows said storage of data for the user score to be displayed in the Leaderboard.
+- Play, where Riddles will be asked to the User.
+- Submit a Riddle, where the User is allowed to add a Riddle which will be moderated and therefore added or not.
+- Leaderboard, where the high scores are presented.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
 - Another feature idea
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+- HMTL language, for writing the webpage layout. 
+- Bootstrap 4 (https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+    This was used for responsiveness of the site 
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+- Bootswatch Minty (https://bootswatch.com/minty/)
+    Bootswatch allows for a simple yet attractive design to be applied to the project
+
+- Python, backend language, to create the server of the game application.
+
+- Sqlite3, Database engine. 
+    This Database stores the Users, Riddles and Scores for the Leaderboard. 
+
+- Behave, for Behavior Driven Deployment or BDD.
 
 
 ## Testing
+Testing was performed through automated and manual tests. 
+Unit Testing was performed with Python scripts, and Behave was used for testing Behavior Driven Development. 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+The responsiveness and performance of the webpage were tested in different browsers, screen sizes and Operative Ststems, since it was originally designed in a Mac Laptop.
+
+In this section, you need to convince the assessor that you have conducted enough testing to 
+legitimately believe that the site works well. Essentially, in this part you will want to go 
+over all of your user stories from the UX section and ensure that they all work as intended, 
+with the project providing an easy and straightforward way for the users to achieve their goals.
 
 Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
 
@@ -63,7 +72,8 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This project was deployed through Github pages.
+The deployed project can be found here:
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
 - Different values for environment variables (Heroku Config Vars)?
@@ -83,6 +93,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ### Acknowledgements
 
-- I received inspiration for this project from the [File Input/Output module of Course Institute] (https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+BD101+2017_T1/courseware/22fb100b5f5846e3b4f2db18683b08bb/f4521923f14f4f98b3ec161db66773e6/?child=first)
- - https://www.youtube.com/watch?v=ngynJQ0iVwM inspiration for sqlite login function
- - https://www.youtube.com/watch?v=NKHUPhfBaW0 inspiration for creating user
+I received inspiration for this project from:
+ - File Input/Output module of Course Institute: https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+BD101+2017_T1/courseware/22fb100b5f5846e3b4f2db18683b08bb/f4521923f14f4f98b3ec161db66773e6/?child=first)
+ - Inspiration for Sqlite Login Function: https://www.youtube.com/watch?v=ngynJQ0iVwM - - - https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/
+ - Inspiration for Creating User functionality: https://www.youtube.com/watch?v=NKHUPhfBaW0
