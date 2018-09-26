@@ -31,3 +31,15 @@ class User:
         if self.password == password:
             return True
         return False
+        
+    @staticmethod
+    def newUser(username, password):
+        if User.fromusername(username):
+            return False
+        with sqlite3.connect("database.sqlite") as db:
+            cursor = db.cursor()    
+        insertData = '''INSERT INTO users(handle,password) 
+        VALUES(?,?)'''
+        cursor.execute(insertData,[(username),(password)])
+        db.commit()
+        return User(cursor.lastrowid)
