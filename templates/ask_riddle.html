@@ -7,12 +7,12 @@
     </div>
     <div class="row justify-content-md-center mt-5">
         <div class="col-md-auto">
-            <h3 class="text-primary"> {{ question }} </h3>
+            <h3 class="text-primary"> {{ riddle.question }} </h3>
         </div>
     </div>
     <div class="row justify-content-md-center mt-5">
         <div class="col-md-auto mb-5">
-            <form action="/riddle/{{ riddle_id }}" method="POST">
+            <form action="/riddle/{{ riddle.id }}" method="POST">
                 <input type="text" name="answer" />
                 <button type="submit" class="btn btn-secondary my-2 my-sm-0 ml-2">Submit Answer <i class="fas fa-dice ml-2"></i></button>
             </form>

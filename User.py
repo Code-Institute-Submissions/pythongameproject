@@ -1,4 +1,5 @@
 import sqlite3
+from flask import session
 
 class User:
     id = 0
@@ -27,10 +28,19 @@ class User:
             return False
         return User(result[0])
 
+    @staticmethod
+    def fromsession():
+        if not session['logged_in_user_id']:
+            return False 
+            
+        return User(session['logged_in_user_id'])
+        
+
     def checkPassword(self, password):
         if self.password == password:
             return True
         return False
+        
         
     @staticmethod
     def newUser(username, password):

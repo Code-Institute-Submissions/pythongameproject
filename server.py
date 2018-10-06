@@ -50,10 +50,14 @@ def logout():
 
 # @app.route('/riddle/')
 
-@app.route('/riddle/<int:riddle_id>')
-def showRiddle(riddle_id):
-    riddle = Riddle(riddle_id)
-    return render_template('ask_riddle.html', question=riddle.question, riddle_id = riddle_id)
+@app.route('/riddle/answer')
+def showRiddle():
+    user = User.fromsession()
+    if not user:
+        return redirect('/login')
+        
+    riddle = Riddle.get_unanswered_riddle_for_user(user)
+    return render_template('ask_riddle.html', riddle=riddle)
 
 @app.route('/riddle/<int:riddle_id>', methods=['POST'])
 def answerRiddle(riddle_id):

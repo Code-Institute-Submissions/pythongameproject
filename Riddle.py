@@ -1,4 +1,5 @@
 import sqlite3
+from User import User
 
 
 class Riddle:
@@ -7,7 +8,7 @@ class Riddle:
     answer = ''
     question = ''
 
-    def __init__(self, riddle_id=False):
+    def __init__(self, riddle_id: int = False):
         if riddle_id:
             db = sqlite3.connect('database.sqlite')
             cursor = db.cursor()
@@ -71,3 +72,26 @@ class Riddle:
         db.close()
         
         return Riddle(riddle_id) 
+
+    @staticmethod
+    def get_unanswered_riddle_for_user(user: User):
+        cursor = sqlite3.connect('database.sqlite').cursor()
+        results = cursor.execute('''
+        SELECT r2.ROWID AS riddle_id
+        FROM riddles AS r2
+        WHERE r2.ROWID NOT IN (
+            SELECT r.ROWID
+            FROM riddles AS r
+            INNER JOIN scores AS s
+                ON s.riddle_id = r.ROWID
+                AND s.user_id = ?
+                )
+        LIMIT 1;
+        ''', (user.id,))
+        
+        riddle = results.fetchone()
+        
+        if not riddle:
+            return None
+            
+        return Riddle(riddle[0])
