@@ -5,15 +5,15 @@ db = sqlite3.connect('database.sqlite')
 cursor = db.cursor()
 
 cursor.execute('''
-    DROP TABLE riddles;
+    DROP TABLE IF EXISTS riddles;
 ''')
 
 cursor.execute('''
-    DROP TABLE users;
+    DROP TABLE IF EXISTS users;
 ''')
 
 cursor.execute('''
-    DROP TABLE scores;
+    DROP TABLE IF EXISTS scores;
 ''')
 
 cursor.execute('''
