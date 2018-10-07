@@ -1,3 +1,11 @@
 .body {
     background-color: #F0B4B7 !important;
 }
+
+#body {
+    background-color: #F0B4B7 !important;
+}
+
+.body {
+    color: #F0B4B7 !important;
+}
