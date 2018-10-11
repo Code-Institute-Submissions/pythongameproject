@@ -8,14 +8,28 @@
 
     <div class="row justify-content-md-center mt-5">
         <div class="col-md-auto">
-            <ul>
-                {% for user in scores %}
-                <h3 class="text-info">
-                    <strong>{{ user[0] }}:</strong> {{ user[1] }}
-                </h3>
-                {% endfor %}
-            </ul>
+
+            <table class="table table-hover">
+                <tbody>
+                    <tr class="table-secondary">
+                        <th scope="row">
+                            {% for user in scores %}
+                            <h3 class="text-muted">
+                            <strong>{{ user[0] }}</strong>
+                            </h3>
+                        </th>
+                        <td>
+                            <h3>{{ user[1] }}</h3>
+                            {% endfor %}
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
         </div>
+
+
 
     </div>
 </div>
