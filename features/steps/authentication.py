@@ -1,30 +1,36 @@
 from behave import *
-from login import login
+from User import User
+from flask import session
 
-@given('that I am authenticating a user')
+@given(u'that I am authenticating a user')
 def step_impl(context):
     context.user = User()
-    context.authenticated = None
+    context.user.handle = None
 
-@when('I am not logged in')
+@when(u'I am not logged in')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given I am not logged in')
+    context.user.handle = found
+    context.user.password = None
+    context.correct = None
+
 
 
 @given(u'I do not currently have an account')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given I do not currently have an account')
-
+    context.user.handle = None
+    context.user.password = None
+    context.correct = None
 
 @when(u'I click the "Login" button')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When I click the "Login" button')
-
+    context.login.page = found
+    context.user.password = None
+    context.correct = None
 
 @when(u'I enter a username "micaela"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When I enter a username "micaela"')
-
+    context.user.handle = "micaela"
+    context.correct = found
 
 @when(u'I enter a password "password"')
 def step_impl(context):
