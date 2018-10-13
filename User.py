@@ -30,10 +30,10 @@ class User:
 
     @staticmethod
     def fromsession():
-        if not session['logged_in_user_id']:
+        if not session.get('logged_in_user_id'):
             return False 
             
-        return User(session['logged_in_user_id'])
+        return User(session.get('logged_in_user_id'))
         
 
     def checkPassword(self, password):
