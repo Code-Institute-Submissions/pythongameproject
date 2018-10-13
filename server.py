@@ -27,14 +27,14 @@ def processlogin():
     user = User.fromusername(username)
     if user:
         if user.checkPassword(password):
-            session['logged_in_user_id'] = user.id
-            session['logged_in_username'] = user.username
+            session.set('logged_in_user_id', user.id)
+            session.set('logged_in_username', user.username)
             return redirect(url_for('index'))
     else:
         user = User.newUser(username, password)
         if user:    
-            session['logged_in_user_id'] = user.id
-            session['logged_in_username'] = user.username
+            session.set('logged_in_user_id', user.id)
+            session.set('logged_in_username', user.username)
             return redirect(url_for('index'))
 
     return redirect(url_for('login'))
@@ -67,7 +67,7 @@ def answerRiddle(riddle_id):
 # render button going to the next riddle (if there are any)
 
     riddle_correct = riddle.checkAnswer(request.form['answer'])
-    Score.record(session['logged_in_user_id'],riddle.id,riddle_correct)
+    Score.record(session.get('logged_in_user_id'),riddle.id,riddle_correct)
     
     return render_template('answer_riddle.html', correct=riddle_correct, riddle=riddle)
 
@@ -83,8 +83,8 @@ def saveNewRiddle():
     question = request.form['question']
     answer = request.form['answer']
     riddle= Riddle.store(question, answer)
-    return 'Thanks! We will review your riddle! <a href="/riddle/'+ str(riddle.id) + '"> Find it here </a>'
-
+    return render_template('thankyou.html')
+    
 @app.route('/leaderboard')
 def leaderboard():
     return render_template('leaderboard.html', scores = Score.get_scores_leaderboard())
