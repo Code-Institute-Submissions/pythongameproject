@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from Riddle import Riddle
 from Score import Score
 from User import User
+
 # import 'RiddleRepository.py'
 
 app = Flask('riddle me this')
@@ -27,14 +28,14 @@ def processlogin():
     user = User.fromusername(username)
     if user:
         if user.checkPassword(password):
-            session.set('logged_in_user_id', user.id)
-            session.set('logged_in_username', user.username)
+            session['logged_in_user_id'] = user.id
+            session['logged_in_username'] = user.username
             return redirect(url_for('index'))
     else:
         user = User.newUser(username, password)
         if user:    
-            session.set('logged_in_user_id', user.id)
-            session.set('logged_in_username', user.username)
+            session['logged_in_user_id'] = user.id
+            session['logged_in_username'] = user.username
             return redirect(url_for('index'))
 
     return redirect(url_for('login'))

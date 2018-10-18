@@ -1,7 +1,6 @@
 import sqlite3
 from User import User
 
-
 class Riddle:
 
     id = False
