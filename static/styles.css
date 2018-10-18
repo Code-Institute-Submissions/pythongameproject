@@ -7,14 +7,19 @@
 }
 
 body {
-    background-color: #f7e8ec;
+    background-color: #f3d3db;
+    background-image: url("/static/riddleback1.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: auto;
 }
 
 h1, h2, h3 {
   text-rendering: optimizeLegibility;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
-/*----------------------------Navbar*/
+/*----------------------------------------------------------------------Navbar*/
 
 .navbar {
     height: 70px;
@@ -32,7 +37,14 @@ a:hover {
     -o-transition: all 0.45s ease-in-out;
 }
 
-/*----------------------------Footer*/
+/*-----------------------------------------------------------------Leaderboard*/
+
+.table-secondary {
+    background-color: #F3969A;
+    width: 30%;
+}
+
+/*----------------------------------------------------------------------Footer*/
 
 #footer-details {
     display: table;
@@ -44,11 +56,11 @@ a:hover {
     font-size: 15px;
     line-height: 20px;
 }
-/*-----------------------------------------------------Font Size Media queries*/
+/*-------------------------------------------------------------- Media queries*/
 
 @media (max-width: 767px) {
-    h1, h2, h3 {
-        
+body {
+    background-size: 767px;
     }
 }
 
