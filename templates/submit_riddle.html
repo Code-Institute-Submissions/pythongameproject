@@ -1,19 +1,24 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-    <div class="row justify-content-md-center mt-5">
-        <div class="col-md-auto">
-            <h3 class="text-primary">Submit your <strong>best</strong> riddle</h3>
+    <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-auto">
+            <h2 class="display-4 text-primary">Submit a Riddle</h2>
             {{ question }}
 
         </div>
     </div>
-
-    <div class="row justify-content-md-center mt-5">
-        <div class="col-md-auto">
+</div>
+<div class="container">
+    <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-auto text-center">
             <form action="/riddle/new" method="POST">
-                <input type="text" name="question" placeholder="Enter the riddle here" />
-                <input type="text" name="answer" placeholder="Enter the answer to the riddle here" />
-                <button type="submit" class="btn btn-secondary my-2 my-sm-0">Submit</button>
+                <input type="text" name="question" placeholder="Riddle" />
+                <br>
+                <br>
+                <input type="text" name="answer" placeholder="Answer" />
+                <br>
+                <br>
+                <button type="submit" class="btn btn-secondary my-2 my-sm-0">Send</button>
             </form>
         </div>
     </div>
