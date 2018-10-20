@@ -1,12 +1,12 @@
 # Riddle Game Project
 
-This is the third Milestone Project, the Practical Python Unit, for Code Institute's Full Stack Web Developer Course.
+This is the Practical Python Unit Milestone Project, for Code Institute's Full Stack Web Developer Course.
 The objective of this project is to design and execute a Riddle-Me-This game, applying the backend coding language Python.
 
 ## UX
 
-This website is designed for an informal gamer who can, through a friendly and clear interphase, 
-Create a user, answer Riddles, Submit their own Riddles to the game and see the top scores in the Leaderboard. 
+This website is designed for an informal gamer who can, through a friendly, simple and clear interphase, perform different actions such as Creating a User,
+Login to their Account, Answer Riddles, Submit their own Riddles to the game and see the top scoring users in the Leaderboard. 
 
 User Stories were used for Behavior-Driven Development, such as:
 - As a user, I am answering a Riddle, a Riddle question is asked. 
@@ -18,7 +18,8 @@ User Stories were used for Behavior-Driven Development, such as:
 ### Existing Features
 - User Creation: A player is allowed and promted to get a user before playing the game, with the objective of recording their scores.
 - Login, which allows said storage of data for the user score to be displayed in the Leaderboard.
-- Play, where Riddles will be asked to the User.
+- Play, where Riddles will be asked to the User, who will answer.
+- When a Riddle is answered, the user is given the correct response.
 - Submit a Riddle, where the User is allowed to add a Riddle which will be moderated and therefore added or not.
 - Leaderboard, where the high scores are presented.
 
@@ -29,11 +30,14 @@ User Stories were used for Behavior-Driven Development, such as:
 ## Technologies Used
 
 - HMTL language, for writing the webpage layout. 
+
+- CSS language to style the layout of the game
+
 - Bootstrap 4 (https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-    This was used for responsiveness of the site 
+    This framework was used for responsiveness of the site 
 
 - Bootswatch Minty (https://bootswatch.com/minty/)
-    Bootswatch allows for a simple yet attractive design to be applied to the project
+    Theme for Bootstrap that allows for a simple yet attractive design to be applied to the project
 
 - Python, backend language, to create the server of the game application.
 
@@ -41,13 +45,72 @@ User Stories were used for Behavior-Driven Development, such as:
     This Database stores the Users, Riddles and Scores for the Leaderboard. 
 
 - Behave, for Behavior Driven Deployment or BDD.
+    Behave creates tests, which were used for testing the Game and Authentication features.
+
+- Font Awesome (url)
 
 
 ## Testing
 Testing was performed through automated and manual tests. 
-Unit Testing was performed with Python scripts, and Behave was used for testing Behavior Driven Development. 
+Unit Testing was performed with Python scripts, and Behave was used for testing 
+Behavior Driven Development. 
 
-The responsiveness and performance of the webpage were tested in different browsers, screen sizes and Operative Ststems, since it was originally designed in a Mac Laptop.
+User Stories for the Behavior Driven Development were as follows:
+        ⋅⋅* Feature: Authenticating a user
+        
+        ⋅⋅*   Scenario: Authenticating an existing user with the wrong password 
+            ⋅⋅* Given that I am authenticating a user
+            ⋅⋅* When the user is "micaela"
+              ⋅⋅* And the password is "incorrect password"
+            ⋅⋅* Then I should find that the user is not authenticated
+          
+          ⋅⋅* Scenario: Authenticating an existing user
+            ⋅⋅* Given that I am authenticating a user
+              ⋅⋅* And I enter a username "micaela"
+              ⋅⋅* And I enter a password "signorelli"
+            ⋅⋅* When I check that the user is authenticated
+            ⋅⋅* Then I should find the user is authenticated
+        
+          ⋅⋅* Scenario: Authenticating a non-existent user
+            ⋅⋅* Given that I am authenticating a user
+            ⋅⋅* When the username is "someone"
+              ⋅⋅* And the password is "whodoesntexist"
+            ⋅⋅* Then I should find that the user is not authenticated
+            
+    ----------------------------------------------------------------------------
+    
+        ⋅⋅* Feature: Checking an answer is correct 
+          
+          ⋅⋅* Scenario: a correct answer
+            ⋅⋅* Given we are answering a riddle
+                ⋅⋅* And the riddle "what is the colour" is asked
+                ⋅⋅* And the correct answer is "yellow"
+            ⋅⋅* When we give the answer "yellow"
+            ⋅⋅* Then answer is correct
+            
+          ⋅⋅* Scenario: an incorrect answer
+            ⋅⋅* Given we are answering a riddle
+                ⋅⋅* And the riddle "what is the colour" is asked
+                ⋅⋅* And the correct answer is "yellow"
+            ⋅⋅* When we give the answer "red"
+            ⋅⋅* Then answer is incorrect
+            
+The initial test was developed to fail, written as follows:
+        
+        ⋅⋅* Scenario: a correct answer
+               ⋅⋅* Given we are answering a riddle
+                   ⋅⋅* And the riddle "what is the colour" is asked
+                   ⋅⋅* And the correct answer is "yellow"
+               ⋅⋅* When we give the answer "what is breakfast"
+               ⋅⋅* Then answer is incorrect
+
+Media Queries were defined to improve responsiveness of the webpage. This was 
+extensively tested in different browsers, screen sizes and Operative Systems, 
+since it was originally designed in a Mac Laptop.
+
+Manual testing was performed through acting like a user in the webpage, utilizing all 
+the features. Through attemplting User Creation, Login, recording and retrieving Scores, and 
+extensive playing, said features were confirmed to work correctly.
 
 In this section, you need to convince the assessor that you have conducted enough testing to 
 legitimately believe that the site works well. Essentially, in this part you will want to go 
@@ -73,6 +136,8 @@ If this section grows too long, you may want to split it off into a separate fil
 ## Deployment
 
 This project was deployed through Github pages.
+The submitted and deployed versions are identical.
+
 The deployed project can be found here:
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
