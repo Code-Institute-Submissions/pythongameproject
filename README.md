@@ -57,6 +57,7 @@ Unit Testing was performed with Python scripts, and Behave was used for testing
 Behavior Driven Development. 
 
 User Stories for the Behavior Driven Development were as follows:
+
         ⋅⋅* Feature: Authenticating a user
         
         ⋅⋅*   Scenario: Authenticating an existing user with the wrong password 
