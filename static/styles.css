@@ -26,20 +26,15 @@ h1, h2, h3, h4 {
     line-height: 1.2;
 }
 
+h5 {
+    font-size: 1.2rem;    
+}
+
 h6 {
     text-align: center;
 }
 
-/*----------------------------------------------------------------------TO DOS*/
-.alert-success, .alert-success>th, .alert-success>td {
-    background-color: #56CC9D;
-}
-
-.alert {
-    color: #56CC9D;
-}
-
-/*----------------------------------------------------------------------Navbar*/
+/*----------------------------------------------------------------------Body*/
 
 body {
     background-repeat: no-repeat;
@@ -51,7 +46,7 @@ body {
 /*----------------------------------------------------------------------Navbar*/
 
 .navbar {
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 30px;
 }
 
@@ -67,9 +62,12 @@ a:hover {
 
 /*-----------------------------------------------------------------Leaderboard*/
 
-.table-secondary {
+.table {
     background-color: #F3969A;
-    width: 30%;
+    border: 10px solid rgba(0,0,0,0.1);
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    vertical-align: top;
 }
 
 /*----------------------------------------------------------------------Footer*/
@@ -194,13 +192,13 @@ body {
     background-image: url("/static/xlbackground.png");
     background-repeat: no-repeat;
     background-position: left;
-    background-attachment: local;
+    background-attachment: fixed;
     background-size: cover;
 }
 
 h1, h2, h3 {
     text-rendering: optimizeLegibility;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.9);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
 }
 
 .display-3 {
