@@ -47,7 +47,8 @@ User Stories were used for Behavior-Driven Development, such as:
 - Behave, for Behavior Driven Deployment or BDD.
     Behave creates tests, which were used for testing the Game and Authentication features.
 
-- Font Awesome (url)
+- Font Awesome (https://fontawesome.com/)
+    Font and Icon toolkit
 
 
 ## Testing
@@ -154,7 +155,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
+- The background image was made by me.
 
 ### Acknowledgements
 
