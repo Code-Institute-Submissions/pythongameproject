@@ -8,20 +8,37 @@
 
 body {
     background-color: #f3d3db;
-    background-image: url("/static/riddleback1.png");
+    background-image: url("/static/xlbackground.png");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-attachment: fixed;
     background-size: auto;
 }
 
-h1, h2, h3 {
-  text-rendering: optimizeLegibility;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+h1, h2, h3, h4 {
+    text-rendering: optimizeLegibility;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
 }
 
 h6 {
     text-align: center;
+}
+
+/*----------------------------------------------------------------------TO DOS*/
+.alert-success, .alert-success>th, .alert-success>td {
+    background-color: #56CC9D;
+}
+.alert {
+    color: #56CC9D;
+}
+
+/*----------------------------------------------------------------------Navbar*/
+
+body {
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-attachment: fixed;
+    background-size: auto;
 }
 
 /*----------------------------------------------------------------------Navbar*/
@@ -64,23 +81,21 @@ a:hover {
 
 @media (max-width: 767px) {
 
+/*-------------------------------------- Background*/
 
-/*-------------------------------------- Adjusts Navbar*/
-
-.navbar-brand {
-    margin-right: 1rem;
-    font-size: 1rem;
-}
-
-.nav-link {
-    font-size: 0.8rem;
+body {
+    background-image: url(/static/smallscreen.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 /*------------------------------------------------- Title sizes*/
 
 h1, h2, h3 {
     text-rendering: optimizeLegibility;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.9);
 }
 
 .display-3 {
@@ -102,6 +117,17 @@ a, .h1 {
     text-align: center;
 }
 
+/*-------------------------------------- Adjusts Navbar*/
+
+.navbar-brand {
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.nav-link {
+    font-size: 0.8rem;
+}
+
 /*-------------------------------------- Adjusts margins*/
 
 .mt-5, .my-5 {
@@ -116,11 +142,49 @@ a, .h1 {
   margin-left: 1rem !important;
 }
 
-
 @media (min-width: 768px) and (max-width: 991px) {
 }
-
+body {
+    background-image: url("/static/smallscreen.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: local;
+    background-size: cover;
+}
 
 @media (min-width: 992px) and (max-width: 1199px) {}
 
+body {    
+    background-image: url("/static/xlbackground.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: local;
+    background-size: cover;
+}
+
+h1, h2, h3 {
+    text-rendering: optimizeLegibility;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.9);
+}
+
+.display-3 {
+    font-size: 3rem;    
+    text-rendering: optimizeLegibility;
+    text-align: center;
+
+}
+.display-4 {
+    font-size: 2.2rem;
+}
+
+a, .h1 {
+    font-size: 2.3rem;
+}
+
+.h6 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {}
+
