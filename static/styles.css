@@ -20,6 +20,12 @@ h1, h2, h3, h4 {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
 }
 
+.display-3 {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
 h6 {
     text-align: center;
 }
@@ -28,6 +34,7 @@ h6 {
 .alert-success, .alert-success>th, .alert-success>td {
     background-color: #56CC9D;
 }
+
 .alert {
     color: #56CC9D;
 }
@@ -77,6 +84,10 @@ a:hover {
     font-size: 15px;
     line-height: 20px;
 }
+
+
+
+
 /*-------------------------------------------------------------- Media queries*/
 
 @media (max-width: 767px) {
@@ -95,7 +106,7 @@ body {
 
 h1, h2, h3 {
     text-rendering: optimizeLegibility;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.9);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0);
 }
 
 .display-3 {
@@ -106,6 +117,7 @@ h1, h2, h3 {
 }
 .display-4 {
     font-size: 1.2rem;
+    line-height: 1.5;
 }
 
 a, .h1 {
@@ -150,6 +162,30 @@ body {
     background-position: left;
     background-attachment: local;
     background-size: cover;
+}
+
+h1, h2, h3 {
+    text-rendering: optimizeLegibility;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.9);
+}
+
+.display-3 {
+    font-size: 2rem;    
+    text-rendering: optimizeLegibility;
+    text-align: center;
+
+}
+.display-4 {
+    font-size: 1.2rem;
+}
+
+a, .h1 {
+    font-size: 1.3rem;
+}
+
+.h6 {
+    font-size: 0.2rem;
+    text-align: center;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {}
