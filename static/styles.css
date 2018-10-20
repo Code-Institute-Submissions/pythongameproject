@@ -10,7 +10,7 @@ body {
     background-color: #f3d3db;
     background-image: url("/static/riddleback1.png");
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center bottom;
     background-attachment: fixed;
     background-size: auto;
 }
@@ -19,12 +19,16 @@ h1, h2, h3 {
   text-rendering: optimizeLegibility;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
+
+h6 {
+    text-align: center;
+}
+
 /*----------------------------------------------------------------------Navbar*/
 
 .navbar {
-    height: 70px;
     font-size: 20px;
-    line-height: 20px;
+    line-height: 30px;
 }
 
 /*-----------------------------------------------------------------------Links*/
@@ -59,13 +63,64 @@ a:hover {
 /*-------------------------------------------------------------- Media queries*/
 
 @media (max-width: 767px) {
-body {
-    background-size: 767px;
-    }
+
+
+/*-------------------------------------- Adjusts Navbar*/
+
+.navbar-brand {
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.nav-link {
+    font-size: 0.8rem;
+}
+
+/*------------------------------------------------- Title sizes*/
+
+h1, h2, h3 {
+    text-rendering: optimizeLegibility;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.display-3 {
+    font-size: 2rem;    
+    text-rendering: optimizeLegibility;
+    text-align: center;
+
+}
+.display-4 {
+    font-size: 1.2rem;
+}
+
+a, .h1 {
+    font-size: 1.3rem;
+}
+
+.h6 {
+    font-size: 0.2rem;
+    text-align: center;
+}
+
+/*-------------------------------------- Adjusts margins*/
+
+.mt-5, .my-5 {
+  margin-top: 1rem !important;
+}
+
+.mr-5 {
+  margin-right: 1rem !important;
+}
+
+.ml-5 {
+  margin-left: 1rem !important;
 }
 
 
-@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+}
 
+
+@media (min-width: 992px) and (max-width: 1199px) {}
 
 @media (min-width: 992px) and (max-width: 1199px) {}
