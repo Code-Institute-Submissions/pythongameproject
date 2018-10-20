@@ -58,6 +58,8 @@ def showRiddle():
         return redirect('/login')
         
     riddle = Riddle.get_unanswered_riddle_for_user(user)
+    if riddle is None:  
+        return render_template('riddlesover.html')    
     return render_template('ask_riddle.html', riddle=riddle)
 
 @app.route('/riddle/<int:riddle_id>', methods=['POST'])
