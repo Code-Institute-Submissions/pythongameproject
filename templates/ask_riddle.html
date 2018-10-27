@@ -3,6 +3,9 @@
 <div class="container mt-5">
     <div class="row justify-content-center mt-5">
         <div class="col-10 mt-5" align="right">
+            {% if firstAttempt == False %}
+                <h2 class="display-4 text-primary"><strong> No. You have one more chance! </strong></h2>
+            {% endif %}
             <h2 class="display-4 text-primary"><strong> {{ riddle.question }} </strong></h2>
         </div>
     </div>
@@ -12,6 +15,7 @@
     <div class="row justify-content-center mt-5">
         <div class="col-s-3 offset-s-3">
             <form action="/riddle/{{ riddle.id }}" method="POST">
+                <input type="hidden" name="first_attempt" value="{{ firstAttempt }}"/>
                 <input type="text" name="answer" placeholder="Riddle Answer" />
                 <br>
                 <br>
