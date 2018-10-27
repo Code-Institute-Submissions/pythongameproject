@@ -12,7 +12,12 @@
     <link rel="stylesheet" href="/static/styles.css" type="text/css" />
 </head>
 
+<!----------------------------------------------------------------------Body -->
+
 <body>
+    
+<!---------------------------------------------------------------------Navbar-->
+    
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                     <a class="navbar-brand" href="{{ url_for('index') }}"><i class="fab fa-fort-awesome mr-2"></i>Home</a>
 
@@ -50,9 +55,14 @@
                         </ul>
                     </div>
                 </nav>
+
+<!---------------------------------------------------------------------Content-->
+
     <section>
         {% block content %} {% endblock %}
     </section>
+
+<!---------------------------------------------------------------------Footer-->
 
     <section>
         <footer>
@@ -63,7 +73,6 @@
                     </div>
                 </div>
             </div>
-
         </footer>
     </section>
 
