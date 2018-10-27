@@ -15,6 +15,8 @@ body {
     background-size: auto;
 }
 
+/*----------------------------------------------------------------------Titles*/
+
 h1, h2, h3, h4 {
     text-rendering: optimizeLegibility;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
@@ -32,15 +34,6 @@ h5 {
 
 h6 {
     text-align: center;
-}
-
-/*----------------------------------------------------------------------Body*/
-
-body {
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-attachment: fixed;
-    background-size: auto;
 }
 
 /*----------------------------------------------------------------------Navbar*/
@@ -88,6 +81,8 @@ a:hover {
 
 /*-------------------------------------------------------------- Media queries*/
 
+/*--------------------------------- Smallest devices*/
+
 @media (max-width: 767px) {
 
 /*-------------------------------------- Background*/
@@ -100,7 +95,7 @@ body {
     background-size: contain;
 }
 
-/*------------------------------------------------- Title sizes*/
+/*-------------------------------------- Title sizes*/
 
 h1, h2, h3 {
     text-rendering: optimizeLegibility;
@@ -152,39 +147,7 @@ a, .h1 {
   margin-left: 1rem !important;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-}
-body {
-    background-image: url("/static/smallscreen.png");
-    background-repeat: no-repeat;
-    background-position: left;
-    background-attachment: local;
-    background-size: cover;
-}
-
-h1, h2, h3 {
-    text-rendering: optimizeLegibility;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.9);
-}
-
-.display-3 {
-    font-size: 2rem;    
-    text-rendering: optimizeLegibility;
-    text-align: center;
-
-}
-.display-4 {
-    font-size: 1.2rem;
-}
-
-a, .h1 {
-    font-size: 1.3rem;
-}
-
-.h6 {
-    font-size: 0.2rem;
-    text-align: center;
-}
+/*--------------------------------- Medium devices*/
 
 @media (min-width: 992px) and (max-width: 1199px) {}
 
@@ -195,6 +158,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+/*-------------------------------------- Title sizes*/
 
 h1, h2, h3 {
     text-rendering: optimizeLegibility;
@@ -220,5 +185,4 @@ a, .h1 {
     text-align: center;
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {}
 
