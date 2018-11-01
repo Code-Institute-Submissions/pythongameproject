@@ -1,6 +1,7 @@
 import sqlite3
 from user import User
 
+
 class Riddle(object):
 
     id = False
@@ -16,7 +17,7 @@ class Riddle(object):
             self.id = riddle[0]
             self.answer = riddle[2]
             self.question = riddle[1]
-        
+
         '''
         with open('riddles') as file:
             riddles = file.read().splitlines()
@@ -28,49 +29,50 @@ class Riddle(object):
         '''
     def checkAnswer(self, answer):
         return self.answer.upper() == answer.upper()
-        
+
     @staticmethod
     def store(question, answer):
 
-    # connect to database 
+        # connect to database
         db = sqlite3.connect('database.sqlite')
-    
+
     # create cursor
         cursor = db.cursor()
-    
+
     # cursor.execute('''INSERT INTO''', ( question, answer )
         cursor.execute('''
             INSERT INTO riddles (question, answer)
             VALUES
                 (?, ?);
         ''', (question, answer))
-    
+
     # get the last inserted row id
         riddle_id = cursor.lastrowid
-        
-    # commit changes to database
-        db.commit()
-        db.close()# connect to database 
-        db = sqlite3.connect('database.sqlite')
-    
-    # create cursor
-        cursor = db.cursor()
-    
-    # cursor.execute('''INSERT INTO''', ( question, answer )
-        cursor.execute('''
-            INSERT INTO riddles (question, answer)
-            VALUES
-                (?, ?);
-        ''', (question, answer))
-    
-    # get the last inserted row id
-        riddle_id = cursor.lastrowid
-        
+
     # commit changes to database
         db.commit()
         db.close()
-        
-        return Riddle(riddle_id) 
+    # connect to database
+        db = sqlite3.connect('database.sqlite')
+
+    # create cursor
+        cursor = db.cursor()
+
+    # cursor.execute('''INSERT INTO''', ( question, answer )
+        cursor.execute('''
+            INSERT INTO riddles (question, answer)
+            VALUES
+                (?, ?);
+        ''', (question, answer))
+
+    # get the last inserted row id
+        riddle_id = cursor.lastrowid
+
+    # commit changes to database
+        db.commit()
+        db.close()
+
+        return Riddle(riddle_id)
 
     @staticmethod
     def get_unanswered_riddle_for_user(user: User):
@@ -87,10 +89,10 @@ class Riddle(object):
                 )
         LIMIT 1;
         ''', (user.id,))
-        
+
         riddle = results.fetchone()
-        
+
         if not riddle:
             return None
-            
+
         return Riddle(riddle[0])

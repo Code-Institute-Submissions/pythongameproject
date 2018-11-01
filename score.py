@@ -1,22 +1,24 @@
 import sqlite3
 
+
 class Score(object):
 
-    user_id=''
-    riddle_id=''
-    correct=''
+    user_id = ''
+    riddle_id = ''
+    correct = ''
+
     @staticmethod
     def record(user_id, riddle_id, correct):
         db = sqlite3.connect('database.sqlite')
         cursor = db.cursor()
         cursor.execute('''
-            INSERT INTO scores (user_id, riddle_id, correct) 
+            INSERT INTO scores (user_id, riddle_id, correct)
             VALUES
                 (?, ?, ?);
-        ''', (user_id, riddle_id,correct))
+        ''', (user_id, riddle_id, correct))
         db.commit()
         return cursor.lastrowid
-        
+
     @staticmethod
     def get_scores_leaderboard():
         cursor = sqlite3.connect('database.sqlite').cursor()
