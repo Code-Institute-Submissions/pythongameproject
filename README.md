@@ -85,7 +85,7 @@ Testing was performed through automated and manual tests.
             ⋅⋅* Given that I am authenticating a user
             ⋅⋅* When the username is "someone"
               ⋅⋅* And the password is "whodoesntexist"
-            ⋅⋅* Then I should find that the user is not authenticated
+            ⋅⋅* Then I should find that the user is not authenticated, but created
             
     ----------------------------------------------------------------------------
     
@@ -120,7 +120,9 @@ Authentication.py test, where Behave could not find Flask. After changing the
 import information from "User" to "user" it worked again. My mentor told me there 
 were conventions of Python concerning upper and lower cases, I presume the mistake 
 was fixed when the uppercase was lowered due to said conventions.  
-I changed every file to underscore accordingly. 
+I changed every file to underscore accordingly.
+
+
 
 - Media Queries were defined to improve responsiveness of the webpage, particularly 
 for smartphones and tablets. This was extensively tested in different browsers, 
@@ -140,6 +142,10 @@ An example of a manual test was User creation.
     4. See a welcome message in the Navbar
     5. Be allowed to play the Riddle Game
     6. Logout with Logout link+icon in Navbar
+
+- I feel allowing all user handles could affect spamming in other contexts, 
+- but it does not affect the game features.
+
 
 Another manual test was retrieving Scores
 1. Retrieving Scores:
