@@ -1,5 +1,5 @@
 from behave import *
-from User import User
+from user import User
 from flask import session
 
 @given(u'that I am authenticating a user')

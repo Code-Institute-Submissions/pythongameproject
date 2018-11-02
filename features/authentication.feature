@@ -4,7 +4,7 @@ Feature: Authenticating a user
     Given that I am authenticating a user
     When the user is "micaela"
       And the password is "incorrect password"
-    Then I should find that the user is authenticated
+    Then I should find that the user is not authenticated
   
   Scenario: Authenticating an existing user
     Given that I am authenticating a user
