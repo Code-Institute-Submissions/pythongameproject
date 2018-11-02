@@ -31,10 +31,10 @@ class User(object):
 
     @staticmethod
     def fromsession():
-        if not session.get('logged_in_user_id'):
-            return False
-
-        return User(session.get('logged_in_user_id'))
+        if session.get('logged_in_user_id') is not None:
+            if session['logged_in_user_id'] == True:
+                return User(session['logged_in_user_id'])
+        return False
 
     def checkPassword(self, password):
         if self.password == password:

@@ -50,7 +50,7 @@ def logout():
 @app.route('/riddle/answer')
 def showRiddle():
     user = User.fromsession()
-    if not user:
+    if user is False:
         return redirect('/login')
 
     riddle = Riddle.get_unanswered_riddle_for_user(user)
@@ -98,5 +98,4 @@ if __name__ == '__main__':
     host = os.environ.get('IP') if os.environ.get('IP') else '0.0.0.0'
     port = int(os.environ.get('PORT') if os.environ.get('PORT') else 8080)
     debug = bool(os.environ.get('DEBUG') if os.environ.get('DEBUG') else False)
-
     app.run(host, port, debug)
