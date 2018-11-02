@@ -158,9 +158,11 @@ Another manual test was retrieving Scores
 
 
 ## Deployment
-This project was deployed through Github pages from the project Git master branch,
-it can be found here: https://mgsignorelli.github.io/pythongameproject/
+This project was deployed through Heroku, 
+it can be found here: http://pythongameproject.herokuapp.com/leaderboard
 The submitted and deployed versions are identical.
+
+For deployment, the configuration variables were manually set in Heroku Configuration.
 
 
 ## Credits
