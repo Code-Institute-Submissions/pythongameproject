@@ -1,4 +1,4 @@
-# [Riddle Game Project](https://mgsignorelli.github.io/pythongameproject/ "Riddle Game Project Deployed")
+# Riddle Game Project
 
 This is the Practical Python Unit Milestone Project, for Code Institute's Full Stack Web Developer Course.
 The objective of this project is to design and execute a Riddle-Me-This game, applying the backend coding language Python.
@@ -152,10 +152,9 @@ Another manual test was retrieving Scores
 
 
 ## Deployment
-
-This project was deployed through Github pages from the project Git master branch.
+This project was deployed through Github pages from the project Git master branch,
+it can be found here: https://mgsignorelli.github.io/pythongameproject/
 The submitted and deployed versions are identical.
-The main title of this project is a link to the Deployed Game. You can also find it here: https://mgsignorelli.github.io/pythongameproject/
 
 
 ## Credits
