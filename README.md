@@ -143,8 +143,8 @@ An example of a manual test was User creation.
     5. Be allowed to play the Riddle Game
     6. Logout with Logout link+icon in Navbar
 
-- I feel allowing all user handles could affect spamming in other contexts, 
-- but it does not affect the game features.
+- Thought: allowing any user handle could affect spamming in other contexts, 
+but it does not affect the game features.
 
 
 Another manual test was retrieving Scores
