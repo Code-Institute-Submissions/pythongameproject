@@ -41,9 +41,6 @@ cursor.execute('''
 cursor.execute('''
     INSERT INTO riddles (question, answer)
     VALUES
-        ('What is the color','Yellow'), 
-        ('Who is the person', 'Lawrence'),
-        ('Which is the show', 'hounds'),
         ('There is a house. One enters it blind and comes out seeing. What is it?','School'),
         ('The more you take, the more you leave behind. What am I?','Steps'),
         ('What has a head, a tail, is brown, and has no legs?','Penny'),
@@ -77,15 +74,6 @@ cursor.execute('''
         ('micaela','signorelli'), 
         ('testuser', 'testpass');
 ''')
-
-# cursor.execute('''
-#    INSERT INTO scores (user_id, riddle_id, correct) 
-#    VALUES
-#        (1, 1, 1), 
-#        (1, 2, 0);
-# ''')
-
-
 
 db.commit()
 db.close()
