@@ -19,12 +19,18 @@ User Stories were used for Behavior-Driven Development, such as:
 - User Creation: A player is allowed and promted to get a user before playing the game, with the objective of recording their scores.
 - Login, which allows said storage of data for the user score to be displayed in the Leaderboard.
 - Play, where Riddles will be asked to the User, who will answer. 
-- When a Riddle is answered, the user is given the correct response.
+- When a Riddle is answered,if it is wrong, there is a second chance.
+- When answering correctly, or for the second time, the user is shown the correct response.
 - When the User plays, the game shows them an Unanswered Riddle.
 - There are currently 41 Riddles. Once a user reaches the end, they are asked to check again soon.
 - Submit a Riddle, where the User is allowed to add a Riddle which will be moderated and therefore added or not.
 - Leaderboard, where the high scores are presented.
 
+Adding a second chance to answer was not a part of the original design, but a consequence of a discussion with my mentor.
+My posterior mockup is as follows:
+<p align="center">
+  <img src="/static/riddlemock.jpg" width="350" title="Mock up" alt="Mock up">
+</p>
 
 ### Features Left to Implement
 - In the future, I would implement allowing spelling mistakes.
@@ -161,9 +167,15 @@ Another manual test was retrieving Scores
 ## Deployment
 This project was deployed through Heroku, 
 it can be found here: http://pythongameproject.herokuapp.com/leaderboard
-The submitted and deployed versions are identical.
+
+Heroku allows the user to automatically deploy the content pushed to the chosen branch.
+In this case, the deployed branch is the master branch.
+
+The submitted and deployed versions are identical. 
 
 For deployment, the configuration variables were manually set in Heroku Configuration.
+
+
 
 
 ## Credits
