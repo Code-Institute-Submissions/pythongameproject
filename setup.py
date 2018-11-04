@@ -44,7 +44,7 @@ cursor.execute('''
         ('There is a house. One enters it blind and comes out seeing. What is it?','School'),
         ('The more you take, the more you leave behind. What am I?','Steps'),
         ('What has a head, a tail, is brown, and has no legs?','Penny'),
-        ('What comes once in a minute, twice in a moment, but never in a thousand years?','Letter M'),
+        ('What comes once in a minute, twice in a moment, but never in a thousand years?','M'),
         ('David s father has three sons, Snap, Crackle and ?','David'),
         ('What room do ghosts avoid?','Living room'),
         ('When does Christmas come before Thanksgiving?','Dictionary'),
@@ -65,7 +65,24 @@ cursor.execute('''
         ('I can carry lots of food, but cannot eat anything.','Fridge'),
         ('It can see, but it isn’t an eye. What is it?','Keyhole'),
         ('You cannot come in or go out without me. What am I?','Door'),
-        ('What gets wet when drying?','Towel');
+        ('What gets wet when drying?','Towel'),
+        ('What word begins and ends with an E but only has one letter?','Envelope'),
+        ('What starts with a P, ends with an E and has thousands of letters?','Post Office'),
+        ('What is so delicate that saying its name breaks it?','Silence'),
+        ('Which word in the dictionary is spelled incorrectly?','Incorrectly'),
+        ('If two is company and three is a crowd, what are four and five?','Nine'),
+        ('What always sleeps with its shoes on?','Horse'),
+        ('I’m am everywhere and a part of everyone. I am at the end of space and time and existence itself. What am I?','E'),
+        ('You are my brother but I am not your brother. Who am I?','Sister'),
+        ('What stays in one corner but travels around the world?','Stamp'),
+        ('Who are people you see everyday, but you don’t know?','Strangers'),
+        ('What has one foot and no legs but carries its house?','Snail'),
+        ('What is green and smells like blue paint?','Green paint'),
+        ('What kind of storm is always in a rush?','Hurricane'),
+        ('What’s the difference between a well dressed man on a bicycle and a poorly dressed man on a unicycle?','Attire'),
+        ('What is the tree that we all carry in our hand?','Palm'),
+        ('How do you spell hard water with only three letters?','Ice'),
+        ('What pulls you down and never lets go?','Gravity');
 ''')
 
 cursor.execute('''
