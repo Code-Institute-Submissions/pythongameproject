@@ -18,15 +18,6 @@ class Riddle(object):
             self.answer = riddle[2]
             self.question = riddle[1]
 
-        '''
-        with open('riddles') as file:
-            riddles = file.read().splitlines()
-
-        riddle = riddles[riddle_id - 1]
-        riddle = riddle.split('|')
-        self.answer = riddle[1]
-        self.question = riddle[0]
-        '''
     def checkAnswer(self, answer):
         return self.answer.upper() == answer.upper()
 
