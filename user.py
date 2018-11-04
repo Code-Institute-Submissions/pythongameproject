@@ -1,4 +1,5 @@
 import sqlite3
+import sys
 from flask import session
 
 
@@ -31,8 +32,10 @@ class User(object):
 
     @staticmethod
     def fromsession():
+        print(session.get('logged_in_user_id'), sys.stderr)
         if session.get('logged_in_user_id') is not None:
-            if session['logged_in_user_id'] == True:
+            print('logged_in_user_id', sys.stderr)
+            if bool(session['logged_in_user_id']) == True:
                 return User(session['logged_in_user_id'])
         return False
 
