@@ -23,7 +23,7 @@ User Stories were used for Behavior-Driven Development, such as:
 - When answering correctly, or for the second time, the user is shown the correct response.
 - When the User plays, the game shows them an Unanswered Riddle.
 - There are currently 41 Riddles. Once a user reaches the end, they are asked to check again soon.
-- Submit a Riddle, where the User is allowed to add a Riddle which will be moderated and therefore added or not.
+- Submit a Riddle, where the User is allowed to add a Riddle to the game.
 - Leaderboard, where the high scores are presented.
 
 Adding a second chance to answer was not a part of the original design, but a consequence of a discussion with my mentor.
