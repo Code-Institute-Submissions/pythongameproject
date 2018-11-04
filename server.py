@@ -6,7 +6,7 @@ from user import User
 
 
 app = Flask('riddle me this')
-app.secret_key = 'radnisjf'
+app.secret_key = os.environ.get('APP_SECRET') if os.environ.get('APP_SECRET') else 'notsecurekey'
 
 
 @app.route('/')
