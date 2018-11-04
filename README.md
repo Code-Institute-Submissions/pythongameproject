@@ -18,9 +18,10 @@ User Stories were used for Behavior-Driven Development, such as:
 ### Existing Features
 - User Creation: A player is allowed and promted to get a user before playing the game, with the objective of recording their scores.
 - Login, which allows said storage of data for the user score to be displayed in the Leaderboard.
-- Play, where Riddles will be asked to the User, who will answer.
+- Play, where Riddles will be asked to the User, who will answer. 
 - When a Riddle is answered, the user is given the correct response.
 - When the User plays, the game shows them an Unanswered Riddle.
+- There are currently 41 Riddles. Once a user reaches the end, they are asked to check again soon.
 - Submit a Riddle, where the User is allowed to add a Riddle which will be moderated and therefore added or not.
 - Leaderboard, where the high scores are presented.
 
@@ -167,8 +168,11 @@ For deployment, the configuration variables were manually set in Heroku Configur
 
 ## Credits
 
-- Most Riddles were taken from: 
+- Riddles sourced from: 
 https://www.everythingmom.com/parenting/45-riddles-and-brain-teasers-for-kids
+https://www.riddles.com/best-riddles
+https://icebreakerideas.com/riddles-for-kids/
+https://riddles.fyi/page/
 
 ### Media
 - The background image was made by me.
