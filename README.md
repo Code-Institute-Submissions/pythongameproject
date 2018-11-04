@@ -180,11 +180,12 @@ For deployment, the configuration variables were manually set in Heroku Configur
 
 ## Credits
 
-- Riddles sourced from: 
-https://www.everythingmom.com/parenting/45-riddles-and-brain-teasers-for-kids
-https://www.riddles.com/best-riddles
-https://icebreakerideas.com/riddles-for-kids/
-https://riddles.fyi/page/
+Riddles sourced from: 
+  - https://www.everythingmom.com/parenting/45-riddles-and-brain-teasers-for-kids
+  - https://www.riddles.com/best-riddles
+  - https://icebreakerideas.com/riddles-for-kids/
+  - https://riddles.fyi/page/
+  - http://brainden.com/logic-riddles.htm
 
 ### Media
 - The background image was made by me.
